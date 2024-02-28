@@ -4,7 +4,6 @@ class Solution {
 public:
     string mergeAlternately(string word1, string word2) {
         string ans;
-        bool w1=false,w2=false;
         for(int i=0 ; i<min(word1.size(),word2.size()) ; i++){
             ans.push_back(word1[i]);
             ans.push_back(word2[i]);
