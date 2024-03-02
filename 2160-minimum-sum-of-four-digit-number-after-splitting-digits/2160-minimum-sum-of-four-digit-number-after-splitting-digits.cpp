@@ -3,15 +3,13 @@ using namespace std;
 class Solution {
 public:
     int minimumSum(int num) {
-       
-        vector<int> v;
-        while(num>0){
-            v.push_back(num%10);
+        vector<int> v(4,0);
+        for(int i=0 ; i<4 ; i++){
+            v[i]=num%10;
             num/=10;
         }
         sort(v.begin() , v.end());
-        int new1=v[0]*10+v[2],new2=v[1]*10+v[3];
-        return new1+new2;
+        return v[0]*10+v[2]+v[1]*10+v[3];
         
     }
 };
