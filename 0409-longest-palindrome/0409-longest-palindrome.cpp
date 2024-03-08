@@ -3,7 +3,7 @@ using namespace std;
 class Solution {
 public:
     int longestPalindrome(string s) {
-        map<int, int> mp;
+        unordered_map<char, int> mp;
         for (int i = 0; i < s.size(); ++i) {
             mp[s[i]]++;
         }
