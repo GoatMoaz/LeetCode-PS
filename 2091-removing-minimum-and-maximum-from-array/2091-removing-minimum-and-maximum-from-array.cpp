@@ -1,8 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define GOAT  ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 class Solution {
 public:
     int minimumDeletions(vector<int>& nums) {
+        GOAT;
         if (nums.size() == 1)
             return 1;
         int min_moves = 1e5, max_moves = -1e5;
