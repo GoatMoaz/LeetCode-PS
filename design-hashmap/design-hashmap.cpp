@@ -1,11 +1,9 @@
-#include <bits/stdc++.h>
-using namespace std;
 class MyHashMap {
 private:
-    vector<int> Map;
+    int Map[1000001];
 public:
     MyHashMap() {
-        Map.resize(1000001,-1);
+        fill(Map,Map+1000001,-1);
     }
 
     void put(int key, int value) {
