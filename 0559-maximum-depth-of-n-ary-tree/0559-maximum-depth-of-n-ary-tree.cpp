@@ -17,10 +17,12 @@ public:
     }
 };
 */
+#define GOAT  ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 
 class Solution {
 public:
     int maxDepth(Node* root) {
+        GOAT
         if(!root)
             return 0;
         int mx=0;
