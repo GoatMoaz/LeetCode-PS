@@ -14,17 +14,13 @@ public:
     }
     
     void pop() {
-        if(!st.empty()){
-            if(st.top()==mn.top())
-                mn.pop();
-            st.pop();
-        }
+        if(st.top()==mn.top())
+            mn.pop();
+        st.pop();  
     }
     
     int top() {
-        if(!st.empty())
-            return st.top();
-        throw;
+        return st.top();
     }
     
     int getMin() {
