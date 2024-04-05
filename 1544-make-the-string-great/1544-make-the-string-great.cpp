@@ -3,20 +3,14 @@ class Solution {
 public:
     string makeGood(string s) {
         GOAT
-        stack<char> st;
-        st.push(s[0]);
-        for (int i = 1; i < s.size(); ++i) {
-           if (!st.empty() && (st.top()==s[i]-32 || st.top()==s[i]+32))
-                st.pop();
-           else
-                st.push(s[i]);
-        }
-        if (st.empty())
-            return "";
         string ans="";
-        while(!st.empty())
-            ans.push_back(st.top()),st.pop();
-        reverse(ans.begin() , ans.end());
+        ans.push_back(s[0]);
+        for (int i = 1; i < s.size(); ++i) {
+           if (!ans.empty() && (ans.back()==s[i]-32 || ans.back()==s[i]+32))
+                ans.pop_back();
+           else
+               ans.push_back(s[i]);
+        }
         return ans;
     }
 };
