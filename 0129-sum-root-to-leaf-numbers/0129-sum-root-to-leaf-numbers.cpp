@@ -9,9 +9,11 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+#define GOAT  ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 class Solution {
 private:
     void dfs(TreeNode* root , int path , int& ans){
+        GOAT
         if(root==nullptr)
             return;
         if(root->left==nullptr && root->right==nullptr){
