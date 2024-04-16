@@ -5,7 +5,7 @@ public:
         GOAT
         stack<int> st;
         for (int i = 0; i < prices.size(); ++i){
-            while(!st.empty() && prices[st.top()]>=prices[i]) {
+            while(st.size() && prices[st.top()]>=prices[i]) {
                 prices[st.top()] -= prices[i];
                 st.pop();
             }
