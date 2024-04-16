@@ -3,8 +3,8 @@ class Solution {
 public:
     vector<int> finalPrices(vector<int>& prices) {
         GOAT
-        stack<int> st{{0}};
-        for (int i = 1; i < prices.size(); ++i){
+        stack<int> st;
+        for (int i = 0; i < prices.size(); ++i){
             while(!st.empty() && prices[st.top()]>=prices[i]) {
                 prices[st.top()] -= prices[i];
                 st.pop();
