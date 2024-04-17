@@ -2,20 +2,18 @@ class Solution {
 public:
     vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
         vector<int> ans;
-        vector<vector<int>> graph(numCourses);
+        unordered_map<int,vector<int>> graph;
         vector<int> dists(numCourses);
         queue<int> q;
-        for (auto node: prerequisites) {
-            int src = node[1];
-            int dist = node[0];
-            graph[src].push_back(dist);
-            dists[dist]++;
+        for (auto& node: prerequisites) {
+            graph[node[1]].push_back(node[0]);
+            dists[node[0]]++;
         }
         for (int i = 0; i < numCourses; ++i) {
             if(!dists[i])
                 q.push(i);
         }
-        while(!q.empty()){
+        while(q.size()){
             int top = q.front();
             q.pop();
             ans.push_back(top);
