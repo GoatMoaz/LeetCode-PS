@@ -1,6 +1,8 @@
+#define GOAT  ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 class Solution {
 public:
     vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
+        GOAT
         vector<int> ans;
         unordered_map<int,vector<int>> graph;
         vector<int> dists(numCourses);
