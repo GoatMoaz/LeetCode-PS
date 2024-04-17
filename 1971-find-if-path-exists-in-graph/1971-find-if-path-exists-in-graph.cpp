@@ -6,18 +6,18 @@ public:
         set<int> visited;
         for (auto &node: edges) {
             graph[node[0]].push_back(node[1]);
-            graph[node[1]].push_back(node[0]);         
+            graph[node[1]].push_back(node[0]);
         }
-        stack<int> st{{source}};
-        while (st.size()) {
-            int curr = st.top();
-            st.pop();
+        queue<int> q{{source}};
+        while (q.size()) {
+            int curr = q.front();
+            q.pop();
             if (curr == destination)
                 return true;
             if (!visited.count(curr)) {
                 visited.insert(curr);
                 for (auto &neighbor: graph[curr]) {
-                    st.push(neighbor);
+                    q.push(neighbor);
                 }
             }
         }
