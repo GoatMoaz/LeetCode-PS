@@ -10,8 +10,8 @@ public:
             pref.push_back(counter);
         }
         
-        for(auto q : queries){
-            int start=q[0], end=q[1];
+        for(int i=0 ; i<queries.size() ; i++){
+            int start=queries[i][0], end=queries[i][1];
             ans.push_back(pref[start]==pref[end]);
         }
         
