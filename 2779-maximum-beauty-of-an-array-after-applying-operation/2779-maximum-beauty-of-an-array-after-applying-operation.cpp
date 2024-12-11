@@ -1,12 +1,15 @@
 class Solution {
 public:
     int maximumBeauty(vector<int>& nums, int k) {
-        int ans = 0;
-        ranges::sort(nums);
-        for (int l = 0, r = 0; r < nums.size(); ++r) {
-        while (nums[r] - nums[l] > 2 * k)
-            ++l;
-        ans = max(ans, r - l + 1);
+        vector<pair<int,int>> v;
+        int ans=1;
+        for(int i=0 ; i<nums.size() ; i++){
+            v.push_back({nums[i]-k, nums[i]+k});
+        }
+        sort(v.begin() , v.end());
+        for(int i=0 ; i<v.size() ; i++){
+            int mx = upper_bound(v.begin() , v.end() , make_pair(v[i].second, (int) 1e9)) - v.begin();
+            ans = max(ans, mx-i);
         }
         return ans;
     }
